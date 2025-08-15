@@ -24,4 +24,13 @@ class NumberOfSubArraysWithXORk {
     }
 }
 
-/* O(n) is the T>C and S.C= O(n) */
+/* O(n) is the T>C and S.C= O(n) 
+    if xor from i(0) to j(6) = px , i to k(3) = x and l(4) to j = k 
+    then px = x^k 
+    apply xor on both sides with k ===> px^k = (x^k)^k = x
+    so x = px^k
+
+    if longest subarray is required then we will store index of the current xor at its first apperance using
+    putIfAbsent() if count of subarrays is required then we will use a separate variable to store count and
+    update frequency of that current XOR
+*/
