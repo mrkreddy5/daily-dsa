@@ -1,5 +1,4 @@
-
-public class MissingNumberInRange {
+class MissingNumberInRange {
     public static void main(String[] args) {
         int[] arr = {1,3,4,5};
         int tot =0;
@@ -22,19 +21,19 @@ public class MissingNumberInRange {
     for simple approach
 */
 
-public int missingNumber(int[] nums) {
-        int xor1=0;
-        for(int i=1;i<=nums.length;i++){
-            xor1 ^= i;
-        }
+// public int missingNumber(int[] nums) {
+//         int xor1=0;
+//         for(int i=1;i<=nums.length;i++){
+//             xor1 ^= i;
+//         }
 
-        int xor2 =0;
-        for(int n: nums){
-            xor2 ^= n;
-        }
+//         int xor2 =0;
+//         for(int n: nums){
+//             xor2 ^= n;
+//         }
 
-        return xor1^xor2;
-}
+//         return xor1^xor2;
+// }
 
 
 // public int missingNumber(int[] nums) {
