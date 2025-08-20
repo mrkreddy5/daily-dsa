@@ -39,7 +39,7 @@ public class Max_Inversions {
             }
             else{
                 sortedNums[k++] = nums[j++];
-                inversions += mid-i+1;
+                inversions += mid-i+1;              // when nums[i] is big , then from low to mid every one can be a inversion
             }
         }
         while(i<=mid){
@@ -57,6 +57,7 @@ public class Max_Inversions {
 }
 
 
-/* Time complexity = O(n^2) for brute force using nested for loop , S.C = O(1)
+/* Inversion i<j and nums[i]>nums[j]
+ Time complexity = O(n^2) for brute force using nested for loop , S.C = O(1)
   where as O(nlogn) => for splitting O(logn) for merging O(n) for merge sort methodology and s.c =O(n) 
  */
