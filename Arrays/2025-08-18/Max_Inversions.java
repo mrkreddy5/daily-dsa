@@ -39,7 +39,7 @@ public class Max_Inversions {
             }
             else{
                 sortedNums[k++] = nums[j++];
-                inversions += mid-i+1;              // when nums[i] is big , then from low to mid every one can be a inversion
+                inversions += mid-i+1;              // when nums[i] is big , then from i to mid every one can be a inversion as they are sorted
             }
         }
         while(i<=mid){
