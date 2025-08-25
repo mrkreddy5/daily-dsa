@@ -86,7 +86,7 @@ public class SetMatrixZeroes {
  */
 
 
- class Solution {
+ class Solutions {
     public void setZeroes(int[][] matrix) {
         boolean[] r = new boolean[matrix.length];
         boolean[] c = new boolean[matrix[0].length];
