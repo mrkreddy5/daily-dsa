@@ -5,7 +5,7 @@ public class Ship_Weight_LTC1011 {
         System.out.println(shipWithinDays(weigths, days));
     }
 
-    public int shipWithinDays(int[] weights, int days) {
+    public static int shipWithinDays(int[] weights, int days) {
         int[] bound = bounds(weights);
         int low = bound[0];
         int high = bound[1];
@@ -37,7 +37,7 @@ public class Ship_Weight_LTC1011 {
         return ans;
     }
 
-    public int[] bounds(int[] nums){
+    public static int[] bounds(int[] nums){
         int sum =0;
         int max = Integer.MIN_VALUE;
         for(int n : nums){
