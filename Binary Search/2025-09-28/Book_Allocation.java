@@ -74,4 +74,6 @@ public class Book_Allocation {
     49 + 24 = 73
     among all this 71 is the minimum among max 
     so answer will always lie between max(arr) and sum(arr)
+
+    T.C = O(nlog(sum(arr)))
  */
