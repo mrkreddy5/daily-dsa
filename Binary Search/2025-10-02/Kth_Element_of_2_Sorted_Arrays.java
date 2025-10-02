@@ -27,33 +27,28 @@ public class Kth_Element_of_2_Sorted_Arrays {
         if(len1>len2){
             return kth_Element_binary_search(b,a,k);
         }
-        int low = 0;
-        int high = len1;
+        int low = Math.max(0,k-len2);   // here k-len2 suggests max element limit (len2) we can take from array2,  cutA(mid) >= k-len2 ,cutB = k-cutA
+        int high = Math.min(k,len1);    // we are taking min(k,len1) max we can take len1 elements if k<len1 it is better to take k only
         while(low<=high){
             int mid = low + (high-low)/2;
-            if(mid<=k){
-                int pos1 = mid;
-                int pos2 = k-mid;
+            int pos1 = mid;
+            int pos2 = k-mid;
 
-                int l1 = pos1-1<0 ? Integer.MIN_VALUE : a[pos1-1];
-                int r1 = pos1>=len1 ? Integer.MAX_VALUE : a[pos1];
-                int l2 = pos2-1<0 ? Integer.MIN_VALUE : b[pos2-1];
-                int r2 = pos2>=len2 ? Integer.MAX_VALUE : b[pos2];
+            int l1 = pos1-1<0 ? Integer.MIN_VALUE : a[pos1-1];
+            int r1 = pos1>=len1 ? Integer.MAX_VALUE : a[pos1];
+            int l2 = pos2-1<0 ? Integer.MIN_VALUE : b[pos2-1];
+            int r2 = pos2>=len2 ? Integer.MAX_VALUE : b[pos2];
 
-                if(l1<=r2 && l2<=r1){
-                    return Math.max(l1,l2);
-                }
-                else if(l1>r2){
-                    high = mid-1;
-                }
-                else{
-                    low = mid+1;
-                }
+            if(l1<=r2 && l2<=r1){
+                return Math.max(l1,l2);
             }
-            else{
+            else if(l1>r2){
                 high = mid-1;
             }
+            else{
+                low = mid+1;
+            }
         }
-        return 0;
+        return -1;
     }
 }
