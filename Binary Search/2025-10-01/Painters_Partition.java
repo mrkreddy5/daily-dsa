@@ -41,7 +41,7 @@ public class Painters_Partition {
                 c_units = c;
                 if(p>A) return false;
             }
-        }
+        }h
         return true;
     }
 
