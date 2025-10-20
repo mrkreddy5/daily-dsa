@@ -1,12 +1,19 @@
 public class XPowOfN {
     public static void main(String[] args) {
         double x = 2.0000;
-        int n= -9;
-        System.out.println(optimisedVers(x, n));
+        int n= 9;
+        boolean status = true;
+        if(n<0){
+            status = false;
+            n = -1*n;
+        }
+        double res = 1;
+        res = usingRecursion(x, n, res);
+        System.out.println(status == false ? 1 / res : res);
     }
 
     public static double bruteForce(double x, int n){
-        double res = 0;
+        double res = 1;
         if(n>0){
             for(int i=1;i<=n;i++){
                 res = res * x;
@@ -38,6 +45,7 @@ public class XPowOfN {
         for -ve (n) we calculate the same res and return 1/res
         
         t.c = O(logn)
+        s.c = O(1)
      */
 
 
@@ -57,5 +65,23 @@ public class XPowOfN {
 
         if (n < 0) return 1 / res;
         return res;
+    }
+
+
+    /* Using recursion we get the same result with same t.c = O(logn) but s.c = O(logn) */
+
+    public static double usingRecursion(double x, int n, double res){
+        System.out.println(x + " : " + n + " : " + res);
+        if(n==0){
+            return res;
+        }
+        else{
+            if(n%2!=0){
+                return usingRecursion(x, n-1, res * x);
+            }
+            else{
+                return usingRecursion(x*x, n/2 , res);
+            }
+        }
     }
 }
