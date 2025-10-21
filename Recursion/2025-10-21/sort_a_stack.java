@@ -18,7 +18,7 @@ class sort_a_stack{
     }
 
     public static void insertElementAtPosition(Stack<Integer> stack, int ele){
-        if(stack.isEmpty() || stack.peek()<ele){
+        if(stack.isEmpty() || stack.peek()<=ele){
             stack.push(ele);
             return;
         }
